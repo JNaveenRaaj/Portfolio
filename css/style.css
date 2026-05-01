@@ -167,12 +167,12 @@ ul { list-style-type: none; }
     transition: all 0.3s ease-in-out;
 }
 
-.project-item-inner:hover, .contact-info-item:hover {
+.project-item-inner:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
 }
 
-.dark .project-item-inner:hover, .dark .contact-info-item:hover {
+.dark .project-item-inner:hover {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
 }
 
