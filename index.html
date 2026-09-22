@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <meta name="description" content="J Naveen Raaj — Software Engineer.">
+
     <link rel="icon" type="image/png" href="./images/Logo.png">
-    
-    <title>Portfolio | J Naveen Raaj</title>
+
+    <title>J Naveen Raaj | Software Engineer</title>
 
     <link rel="stylesheet" href="./css/skins/color1.css">
     <link rel="stylesheet" href="./css/style.css">
@@ -22,12 +23,30 @@
     <link rel="stylesheet" href="./css/style-switcher.css">
 </head>
 
-<body>
+<body class="dark">
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-star"></div>
+        <p>Loading</p>
+    </div>
+
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Animated background blobs -->
+    <div class="bg-blobs" aria-hidden="true">
+        <span class="blob blob-1"></span>
+        <span class="blob blob-2"></span>
+        <span class="blob blob-3"></span>
+    </div>
+
     <div class="main-container">
 
+        <!-- Sidebar -->
         <div class="aside">
             <div class="logo">
-                <a href="#"><span>N</span>aveen</a>
+                <a href="#home"><span>N</span>aveen</a>
             </div>
             <div class="nav-toggler">
                 <span></span>
@@ -35,30 +54,82 @@
             <ul class="nav">
                 <li><a href="#home" class="active"><i class="fa fa-home"></i> Home</a></li>
                 <li><a href="#about"><i class="fa fa-user"></i> About</a></li>
-                <li><a href="#experience"><i class="fa-solid fa-lightbulb"></i> Experience</a></li>
+                <li><a href="#experience"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
                 <li><a href="#project"><i class="fa fa-list"></i> Projects</a></li>
-                <li><a href="#contact"><i class="fa fa-comments"></i>Contact</a></li>
+                <li><a href="#contact"><i class="fa fa-comments"></i> Contact</a></li>
             </ul>
+            <div class="aside-social">
+                <a href="https://www.linkedin.com/in/j-naveen-raaj-01327b1b9/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/JNaveenRaaj" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="mailto:jnaveenraaj2003@gmail.com" title="Email"><i class="fa fa-envelope"></i></a>
+            </div>
         </div>
+
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+
         <div class="main-content">
+
+            <!-- ============ HOME ============ -->
             <section class="home section" id="home">
                 <div class="container">
-                    <div class="row">
+                    <div class="row hero-row">
                         <div class="home-info padd-15">
+                            <span class="availability-badge"><i class="fa-solid fa-circle"></i> Open to opportunities</span>
                             <h3 class="hello">Hello, my name is <span class="name">J Naveen Raaj</span></h3>
                             <h3 class="profession">I'm a <span class="typing"></span></h3>
-                            <p>Welcome! I'm a <b>Senior Software Engineer</b> specializing in Full Stack Development and AI Integrations. My passion lies in crafting scalable, cutting-edge applications using the <b>MERN stack, Next.js, FastAPI, and Python</b>. I weave together seamless, dynamic experiences that redefine the digital landscape.
-                                Proficient in <b>Microservices Architecture</b>, <b>GenAI Platforms</b>, and <b>Workflow Automation (n8n)</b>, I thrive on decoding complex system challenges and infusing innovation into every project. Join me in harnessing the transformative power of code, where innovation seamlessly merges with high-performance functionality.
+                            <p>Results-driven <b>Senior Engineer</b> with 2+ years of experience architecting
+                                scalable microservices and optimizing backend systems. I deliver measurable gains
+                                — like a <b>60% reduction in database query latency</b> and <b>40% faster API
+                                responses</b> — across enterprise platforms by blending the <b>MERN stack, Next.js,
+                                FastAPI</b> and <b>GenAI</b>.
                             </p>
-
-                            <a href="./J Naveen Raaj Resume.pdf" class="btn" download>Download CV </a>
+                            <div class="hero-buttons">
+                                <a href="./J Naveen Raaj Resume Latest.pdf" class="btn" download>Download CV <i class="fa fa-download"></i></a>
+                                <a href="./J Naveen Raaj Resume Latest.pdf" class="btn btn-outline" target="_blank">View Resume</a>
+                            </div>
+                            <div class="hero-social">
+                                <a href="https://www.linkedin.com/in/j-naveen-raaj-01327b1b9/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="https://github.com/JNaveenRaaj" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                                <a href="https://leetcode.com/u/JNaveenraaj/" target="_blank" title="LeetCode"><i class="fa-solid fa-code"></i></a>
+                                <a href="mailto:jnaveenraaj2003@gmail.com" title="Email"><i class="fa fa-envelope"></i></a>
+                            </div>
                         </div>
                         <div class="home-img padd-15">
-                            <img src="./images/Profile pic.jpeg" alt="J Naveen Raaj Profile Picture">
+                            <div class="img-ring">
+                                <span class="ring-spin" aria-hidden="true"></span>
+                                <img src="./images/Profile pic.jpeg" alt="J Naveen Raaj Profile Picture">
+                            </div>
+                            <div class="float-badge badge-1"><i class="fa-solid fa-microchip"></i> AI Integrations</div>
+                            <div class="float-badge badge-2"><i class="fa-solid fa-brain"></i> GenAI</div>
+                            <div class="float-badge badge-3"><i class="fa-solid fa-rocket"></i> Full Stack</div>
+                        </div>
+                    </div>
+
+                    <!-- Stats counters -->
+                    <div class="row">
+                        <div class="stats-row padd-15">
+                            <div class="stat-item">
+                                <div class="stat-num"><span class="counter" data-target="2">0</span><span>+</span></div>
+                                <div class="stat-label">Years Experience</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-num"><span class="counter" data-target="7">0</span><span>+</span></div>
+                                <div class="stat-label">Projects Built</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-num"><span class="counter" data-target="60">0</span><span>%</span></div>
+                                <div class="stat-label">Query Latency Reduced</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-num"><span class="counter" data-target="50">0</span><span>+</span></div>
+                                <div class="stat-label">Daily Active Users</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <!-- ============ ABOUT ============ -->
             <section class="about section" id="about">
                 <div class="container">
                     <div class="row">
@@ -70,11 +141,18 @@
                         <div class="about-content padd-15">
                             <div class="row">
                                 <div class="about-text padd-15">
-                                    <h3>I'm J Naveen Raaj - <span>Senior Full Stack Developer</span></h3>
-                                    <p>An independent, motivated, and hardworking Computer Science professional who enjoys leveraging technical expertise for the growth of an organization. Proficient in modern architectures and languages, including <b>Python, JavaScript, TypeScript, C++, and database management (NoSQL/SQL)</b>. I also love spending my time building <b>AI Agents, automating workflows, and optimizing system performance</b>. I am always open to new opportunities where I am exposed to emerging technologies, challenging me to build efficient, enterprise-grade solutions.
+                                    <h3>I'm J Naveen Raaj — <span>Senior Full Stack Developer</span></h3>
+                                    <p>An independent, motivated, and hardworking Computer Science professional who
+                                        enjoys leveraging technical expertise for the growth of an organization.
+                                        Proficient in modern architectures and languages including <b>Python, JavaScript,
+                                        TypeScript, C++</b> and <b>database management (NoSQL/SQL)</b>. I love building
+                                        <b>AI Agents</b>, automating workflows, and optimizing system performance. Always
+                                        open to opportunities that expose me to emerging technologies and challenge me to
+                                        build efficient, enterprise-grade solutions.
                                     </p>
                                 </div>
                             </div>
+
                             <div class="row">
                                 <div class="personal-info padd-15">
                                     <div class="row">
@@ -82,7 +160,7 @@
                                             <p>Birthday: <span>22 Feb 2003</span></p>
                                         </div>
                                         <div class="info-items padd-15">
-                                            <p>Age: <span>23</span></p>
+                                            <p>Age: <span id="age">23</span></p>
                                         </div>
                                         <div class="info-items padd-15">
                                             <p>Email: <span>jnaveenraaj2003@gmail.com</span></p>
@@ -90,89 +168,136 @@
                                         <div class="info-items padd-15">
                                             <p>Mobile: <span>+91-9321863306</span></p>
                                         </div>
+                                        <div class="info-items padd-15">
+                                            <p>Location: <span>Chennai, TN, India</span></p>
+                                        </div>
+                                        <div class="info-items padd-15">
+                                            <p>Degree: <span>B.Tech CSE (IoT)</span></p>
+                                        </div>
+                                        <div class="info-items padd-15">
+                                            <p>LinkedIn: <span><a href="https://www.linkedin.com/in/j-naveen-raaj-01327b1b9/" target="_blank">j-naveen-raaj</a></span></p>
+                                        </div>
+                                        <div class="info-items padd-15">
+                                            <p>GitHub: <span><a href="https://github.com/JNaveenRaaj" target="_blank">JNaveenRaaj</a></span></p>
+                                        </div>
                                     </div>
                                     <div class="row">
                                         <div class="buttons padd-15">
-                                            <a href="#contact" data-section-index="1" class="btn hire-me">Hire Me</a>
+                                            <a href="#contact" data-section-index="1" class="btn hire-me">Hire Me <i class="fa fa-paper-plane"></i></a>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="skills padd-15">
+                                    <h4 class="skills-group-title">Languages & Frameworks</h4>
                                     <div class="row">
                                         <div class="skill-items padd-15">
                                             <h5>Python & AI Integration</h5>
                                             <div class="progress">
-                                                <div class="progress-in" style="width: 85%;"></div>
+                                                <div class="progress-in" data-progress="90"></div>
+                                                <div class="skill-percent">90%</div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-items padd-15">
+                                            <h5>React.js / Next.js / Redux</h5>
+                                            <div class="progress">
+                                                <div class="progress-in" data-progress="85"></div>
                                                 <div class="skill-percent">85%</div>
                                             </div>
                                         </div>
                                         <div class="skill-items padd-15">
-                                            <h5>React.js / Next.js</h5>
+                                            <h5>Node.js / Express.js</h5>
                                             <div class="progress">
-                                                <div class="progress-in" style="width: 80%;"></div>
+                                                <div class="progress-in" data-progress="80"></div>
                                                 <div class="skill-percent">80%</div>
-                                            </div>
-                                        </div>
-                                        <div class="skill-items padd-15">
-                                            <h5>Node.js & Express</h5>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 75%;"></div>
-                                                <div class="skill-percent">75%</div>
-                                            </div>
-                                        </div>
-                                        <div class="skill-items padd-15">
-                                            <h5>Databases (MongoDB/SQL/Redis)</h5>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 75%;"></div>
-                                                <div class="skill-percent">75%</div>
                                             </div>
                                         </div>
                                         <div class="skill-items padd-15">
                                             <h5>FastAPI & REST APIs</h5>
                                             <div class="progress">
-                                                <div class="progress-in" style="width: 80%;"></div>
-                                                <div class="skill-percent">80%</div>
+                                                <div class="progress-in" data-progress="85"></div>
+                                                <div class="skill-percent">85%</div>
                                             </div>
                                         </div>
-                                        <div class="skill-items padd-15">
-                                            <h5>n8n Workflow Automation</h5>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 70%;"></div>
-                                                <div class="skill-percent">70%</div>
-                                            </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="tool-tags padd-15">
+                                            <span class="tool-tag">TypeScript</span>
+                                            <span class="tool-tag">C / C++</span>
+                                            <span class="tool-tag">MongoDB</span>
+                                            <span class="tool-tag">PostgreSQL</span>
+                                            <span class="tool-tag">MySQL</span>
+                                            <span class="tool-tag">Redis</span>
+                                            <span class="tool-tag">Databricks</span>
+                                            <span class="tool-tag">Docker</span>
+                                            <span class="tool-tag">CI/CD</span>
+                                            <span class="tool-tag">SonarQube</span>
+                                            <span class="tool-tag">n8n</span>
+                                            <span class="tool-tag">GitHub Copilot</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Education timeline -->
                             <div class="row">
                                 <div class="education padd-15">
-                                    <h3 class="title">Education</h3>
-                                    <div class="row">
-                                        <div class="timeline-box padd-15">
-                                            <div class="timeline shadow-dark">
-                                                <div class="timeline-item">
-                                                    <div class="circle-dot"></div>
-                                                    <h3 class="timeline-date">
-                                                        <i class="fa fa-calendar"></i> 2020 - 2024
-                                                    </h3>
-                                                    <h3 class="timeline-title">B.Tech in CSE with IoT</h3>
-                                                    <p class="timeline-text">Graduated from
-                                                        <span>SRM Institute of Science and Technology, KTR
-                                                            Chennai</span>. Secured an overall CGPA of <span>9.16 / 10.00</span>.
-                                                    </p>
-                                                </div>
-                                                <div class="timeline-item">
-                                                    <div class="circle-dot"></div>
-                                                    <h3 class="timeline-date">
-                                                        <i class="fa fa-calendar"></i> 2019 - 2020
-                                                    </h3>
-                                                    <h3 class="timeline-title">12th Grade</h3>
-                                                    <p class="timeline-text">Completed my 12th studies at
-                                                        <span>Kendriya Vidhyalaya Colaba Mumbai</span>. Secured <span>86%</span> in my board exams.
-                                                    </p>
-                                                </div>
+                                    <h3 class="title"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                                    <div class="timeline-box">
+                                        <div class="timeline shadow-dark">
+                                            <div class="timeline-item">
+                                                <div class="circle-dot"></div>
+                                                <h3 class="timeline-date"><i class="fa fa-calendar"></i> 2020 - 2024</h3>
+                                                <h3 class="timeline-title">B.Tech in CSE with IoT</h3>
+                                                <p class="timeline-text">
+                                                    <span>SRM Institute of Science and Technology, KTR Chennai</span> —
+                                                    secured an overall CGPA of <span>9.16 / 10.00</span>. Coursework: Data
+                                                    Structures & Algorithms, OS, DBMS, OOP.
+                                                </p>
+                                            </div>
+                                            <div class="timeline-item">
+                                                <div class="circle-dot"></div>
+                                                <h3 class="timeline-date"><i class="fa fa-calendar"></i> 2019 - 2020</h3>
+                                                <h3 class="timeline-title">12th Grade</h3>
+                                                <p class="timeline-text">
+                                                    Completed at <span>Kendriya Vidyalaya Colaba, Mumbai</span> — secured
+                                                    <span>86%</span> in board exams.
+                                                </p>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="education padd-15">
+                                    <h3 class="title"><i class="fa-solid fa-trophy"></i> Coding Profiles</h3>
+                                    <div class="coding-profiles">
+                                        <a class="profile-card" href="https://takeuforward.org/profile/JNaveenRaaj" target="_blank">
+                                            <i class="fa-solid fa-route"></i>
+                                            <div>
+                                                <h5>TakeUForward</h5>
+                                                <p>DSA journey & practice</p>
+                                            </div>
+                                        </a>
+                                        <a class="profile-card" href="https://leetcode.com/u/JNaveenraaj/" target="_blank">
+                                            <i class="fa-solid fa-code"></i>
+                                            <div>
+                                                <h5>LeetCode</h5>
+                                                <p>Problem-solving & DSA</p>
+                                            </div>
+                                        </a>
+                                        <a class="profile-card" href="https://www.geeksforgeeks.org/user/jnaveenraaj2003/" target="_blank">
+                                            <i class="fa-solid fa-terminal"></i>
+                                            <div>
+                                                <h5>GeeksforGeeks</h5>
+                                                <p>Articles & practice</p>
+                                            </div>
+                                        </a>
+                                        <a class="profile-card" href="https://www.naukri.com/code360/profile/JNaveenRaaj" target="_blank">
+                                            <i class="fa-solid fa-bullseye"></i>
+                                            <div>
+                                                <h5>Code360</h5>
+                                                <p>Practice & contests</p>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -180,6 +305,8 @@
                     </div>
                 </div>
             </section>
+
+            <!-- ============ EXPERIENCE ============ -->
             <section class="experience section" id="experience">
                 <div class="container">
                     <div class="row">
@@ -188,35 +315,85 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="experience-content padd-15 experience-wrapper">
-                            <div class="experience-left">
-                                <div class="experience-text padd-15">
-                                    <h3>Senior Engineer - <span>Tiger Analytics</span></h3>
-                                    <h5 class="experience-date">
-                                        <i class="fa fa-calendar"></i> Jan 2024 - Present
-                                    </h5>
-                                    <div class="experience-points">
-                                        <p><b>Architected a fault-tolerant MERN-based microservices</b> platform for distributed task tracking;
-                                            leveraged <b>NoSQL modeling</b> and <b>Redis caching</b> to achieve a <b>40% reduction in API
-                                                latency</b>.</p>
-                                        <p><b>Secured enterprise application access</b> via robust <b>OAuth 2.0 and JWT</b> flows, championing
-                                            modern <b>React patterns</b> to streamline role-based workflow orchestration.</p>
-                                        <p>Orchestrated <b>Docker containerization</b> and integrated automated <b>CI/CD pipelines</b>,
-                                            significantly <b>cutting production deployment issues by 25%</b>.</p>
-                                        <p><b>Enhanced core GenAI platform</b> by directing real-time <b>ML model streaming</b> and predictive
-                                            analytics, driving automated decision-making and <b>boosting user engagement by 15%</b>.</p>
+                        <div class="experience-content padd-15">
+                            <div class="experience-timeline">
+
+                                <div class="timeline-item exp-item">
+                                    <div class="circle-dot"></div>
+                                    <div class="exp-card">
+                                        <div class="exp-head">
+                                            <div class="exp-company-logo">
+                                                <img src="./images/Company/Tiger-Analytics.webp" alt="Tiger Analytics Logo">
+                                            </div>
+                                            <div class="exp-title">
+                                                <h3>Senior Engineer</h3>
+                                                <h4><span><i class="fa-solid fa-building"></i> Tiger Analytics</span> · Chennai, TN</h4>
+                                                <h5 class="experience-date"><i class="fa fa-calendar"></i> Jan 2026 - Present</h5>
+                                            </div>
+                                            <span class="exp-chip current">Current</span>
+                                        </div>
+                                        <ul class="timeline-points">
+                                            <li>Spearheaded an enterprise <b>GenAI chat platform</b> using <b>Next.js,
+                                                FastAPI, Node.js, PostgreSQL</b> and <b>Databricks Unity Catalog</b> for
+                                                50+ daily active users.</li>
+                                            <li>Reduced database query latency by <b>60%</b> via Databricks Unity Catalog
+                                                APIs and a Redis caching layer, cutting response times from ~500ms to
+                                                ~200ms.</li>
+                                            <li>Orchestrated <b>SSO and RBAC</b> for tenant management across 3+
+                                                enterprise apps using <b>Okta</b> and <b>Microsoft Entra</b>, reducing
+                                                auth support tickets by <b>30%</b>.</li>
+                                            <li>Improved model response times by <b>20%</b> by architecting real-time
+                                                <b>ML streaming pipelines</b> with React Redux for progressive rendering.
+                                            </li>
+                                        </ul>
+                                        <div class="metric-chips">
+                                            <span class="chip">-60% Query Latency</span>
+                                            <span class="chip">-30% Auth Tickets</span>
+                                            <span class="chip">-20% Response Time</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="experience-right">
-                                <div class="company-photos">
-                                    <img src="./images/Company/Tiger-Analytics.webp" alt="Tiger Analytics Logo">
+
+                                <div class="timeline-item exp-item">
+                                    <div class="circle-dot"></div>
+                                    <div class="exp-card">
+                                        <div class="exp-head">
+                                            <div class="exp-company-logo">
+                                                <img src="./images/Company/Tiger-Analytics.webp" alt="Tiger Analytics Logo">
+                                            </div>
+                                            <div class="exp-title">
+                                                <h3>Application Engineer</h3>
+                                                <h4><span><i class="fa-solid fa-building"></i> Tiger Analytics</span> · Chennai, TN</h4>
+                                                <h5 class="experience-date"><i class="fa fa-calendar"></i> Jan 2024 - Dec 2025</h5>
+                                            </div>
+                                        </div>
+                                        <ul class="timeline-points">
+                                            <li>Decreased <b>API latency by 40%</b> for 20+ concurrent users via
+                                                fault-tolerant <b>FastAPI/React microservices</b> with optimized NoSQL
+                                                schemas and Redis caching.</li>
+                                            <li>Standardized <b>OAuth 2.0 and JWT</b> across 5+ React POC apps, reducing
+                                                auth implementation time by <b>50%</b> per project.</li>
+                                            <li>Eliminated <b>15+ critical vulnerabilities</b> pre-production by
+                                                enforcing <b>SonarQube</b> quality gates across 10+ POC projects.</li>
+                                            <li>Boosted internal productivity by <b>25%</b> for 30+ users by embedding
+                                                SharePoint document previews via <b>Microsoft Graph API</b>.</li>
+                                        </ul>
+                                        <div class="metric-chips">
+                                            <span class="chip">-40% API Latency</span>
+                                            <span class="chip">-50% Auth Time</span>
+                                            <span class="chip">-15 Vuln Fixes</span>
+                                            <span class="chip">+25% Productivity</span>
+                                        </div>
+                                    </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <!-- ============ PROJECTS ============ -->
             <section class="project section" id="project">
                 <div class="container">
                     <div class="row">
@@ -225,68 +402,168 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="project-heading padd-15">
-                            <h2>My Projects :</h2>
+                        <div class="project-filters padd-15">
+                            <button class="filter-btn active" data-filter="all">All</button>
+                            <button class="filter-btn" data-filter="ai">AI</button>
+                            <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+                            <button class="filter-btn" data-filter="web">Web Apps</button>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="project-item padd-15">
-                            <div class="project-item-inner shadow-dark ">
+                    <div class="row project-grid">
+
+                        <div class="project-item padd-15" data-category="ai">
+                            <div class="project-item-inner shadow-dark">
                                 <div class="project-img">
-                                    <a href="https://github.com/JNaveenRaaj/AI-Agent"><img src="./images/Projects/AI Assistant.png" alt="Personalized AI Agent"></a>
+                                    <a href="https://github.com/JNaveenRaaj/AI-Agent" target="_blank">
+                                        <img src="./images/Projects/AI Assistant.png" alt="Jarvis AI Assistant">
+                                    </a>
                                 </div>
-                                <h3>AI Assistant</h3>
+                                <div class="project-info">
+                                    <h3>Jarvis AI Assistant</h3>
+                                    <p>Context-aware desktop AI assistant with real-time system commands, web search and
+                                        voice automation. Automates 60% of manual orchestration via n8n workflows.</p>
+                                    <div class="project-tags">
+                                        <span>Python</span><span>n8n</span><span>AI</span><span>TTS/STT</span>
+                                    </div>
+                                    <div class="project-actions">
+                                        <a href="https://github.com/JNaveenRaaj/AI-Agent" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="project-item padd-15">
+                        <div class="project-item padd-15" data-category="fullstack">
                             <div class="project-item-inner shadow-dark">
                                 <div class="project-img">
-                                    <a href="https://zip-zap-blue.vercel.app/"><img src="./images/Projects/ZipZap.png" alt="ZipZap"></a>
+                                    <a href="https://zip-zap-blue.vercel.app/" target="_blank">
+                                        <img src="./images/Projects/ZipZap.png" alt="ZipZap">
+                                    </a>
                                 </div>
-                                <h3>ZipZap</h3>
-                            </div>
-                        </div>
-                        
-                        <div class="project-item padd-15">
-                            <div class="project-item-inner shadow-dark">
-                                <div class="project-img">
-                                    <a href="https://github.com/JNaveenRaaj/Chat-Together"><img src="./images/Projects/Chat App.png" alt="Chat Application"></a>
+                                <div class="project-info">
+                                    <h3>ZipZap</h3>
+                                    <p>A fast, modern quiz/web platform (Next.js) deployed on Vercel with a smooth
+                                        interactive experience.</p>
+                                    <div class="project-tags">
+                                        <span>Next.js</span><span>React</span><span>Vercel</span>
+                                    </div>
+                                    <div class="project-actions">
+                                        <a href="https://zip-zap-blue.vercel.app/" target="_blank"><i class="fa fa-external-link-alt"></i> Live</a>
+                                    </div>
                                 </div>
-                                <h3>Chat Application</h3>
                             </div>
                         </div>
 
-                        <div class="project-item padd-15">
+                        <div class="project-item padd-15" data-category="fullstack">
                             <div class="project-item-inner shadow-dark">
                                 <div class="project-img">
-                                    <a href="https://weather-report-xi-three.vercel.app/"><img src="./images/Projects/Weather App.png" alt="Weather Application"></a>
+                                    <a href="https://github.com/JNaveenRaaj/Chat-Together" target="_blank">
+                                        <img src="./images/Projects/Chat App.png" alt="Chat Application">
+                                    </a>
                                 </div>
-                                <h3>Weather Application</h3>
+                                <div class="project-info">
+                                    <h3>Chat-Together</h3>
+                                    <p>Real-time chat application with a modern UI built on the MERN stack and
+                                        Socket.IO-style messaging.</p>
+                                    <div class="project-tags">
+                                        <span>MongoDB</span><span>Express</span><span>React</span><span>Node</span>
+                                    </div>
+                                    <div class="project-actions">
+                                        <a href="https://github.com/JNaveenRaaj/Chat-Together" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="project-item padd-15">
+
+                        <div class="project-item padd-15" data-category="web">
                             <div class="project-item-inner shadow-dark">
                                 <div class="project-img">
-                                    <a href="https://github.com/JNaveenRaaj/Infopedia"><img src="./images/Projects/Infopedia.png" alt="Infopedia"></a>
+                                    <a href="https://weather-report-xi-three.vercel.app/" target="_blank">
+                                        <img src="./images/Projects/Weather App.png" alt="Weather Application">
+                                    </a>
                                 </div>
-                                <h3>Infopedia</h3>
+                                <div class="project-info">
+                                    <h3>Weather Application</h3>
+                                    <p>Live weather reporting app with geolocation, forecasts and a clean responsive
+                                        interface built in React.</p>
+                                    <div class="project-tags">
+                                        <span>React</span><span>API</span><span>Vercel</span>
+                                    </div>
+                                    <div class="project-actions">
+                                        <a href="https://weather-report-xi-three.vercel.app/" target="_blank"><i class="fa fa-external-link-alt"></i> Live</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="project-item padd-15">
+
+                        <div class="project-item padd-15" data-category="web">
                             <div class="project-item-inner shadow-dark">
                                 <div class="project-img">
-                                    <a href="https://jnaveenraaj.github.io/SUN-Automobiles/"><img src="./images/Projects/SUN Automobiles.png" alt="SUN Automobiles"></a>
+                                    <a href="https://github.com/JNaveenRaaj/Infopedia" target="_blank">
+                                        <img src="./images/Projects/Infopedia.png" alt="Infopedia">
+                                    </a>
                                 </div>
-                                <h3>SUN Automobiles</h3>
+                                <div class="project-info">
+                                    <h3>Infopedia</h3>
+                                    <p>An encyclopedia-style knowledge portal delivering structured, searchable content
+                                        with an interactive UI.</p>
+                                    <div class="project-tags">
+                                        <span>React</span><span>Node</span><span>Express</span><span>JavaScript</span>
+                                    </div>
+                                    <div class="project-actions">
+                                        <a href="https://github.com/JNaveenRaaj/Infopedia" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
+                        <div class="project-item padd-15" data-category="fullstack">
+                            <div class="project-item-inner shadow-dark">
+                                <div class="project-img">
+                                    <a href="https://github.com/JNaveenRaaj" target="_blank">
+                                        <img src="./images/Projects/Book Share.png" alt="Book Share">
+                                    </a>
+                                </div>
+                                <div class="project-info">
+                                    <h3>Book Share</h3>
+                                    <p>A book sharing & discovery app to trade, review and recommend books — full stack
+                                        CRUD experience.</p>
+                                    <div class="project-tags">
+                                        <span>MERN</span><span>CRUD</span>
+                                    </div>
+                                    <div class="project-actions">
+                                        <a href="https://github.com/JNaveenRaaj" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                        <div class="project-item padd-15" data-category="web">
+                            <div class="project-item-inner shadow-dark">
+                                <div class="project-img">
+                                    <a href="https://jnaveenraaj.github.io/SUN-Automobiles/" target="_blank">
+                                        <img src="./images/Projects/SUN Automobiles.png" alt="SUN Automobiles">
+                                    </a>
+                                </div>
+                                <div class="project-info">
+                                    <h3>SUN Automobiles</h3>
+                                    <p>A showcase website for an automobile dealership with galleries, listings and a
+                                        polished landing page.</p>
+                                    <div class="project-tags">
+                                        <span>HTML/CSS</span><span>JavaScript</span>
+                                    </div>
+                                    <div class="project-actions">
+                                        <a href="https://jnaveenraaj.github.io/SUN-Automobiles/" target="_blank"><i class="fa fa-external-link-alt"></i> Live</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </section>
+
+            <!-- ============ CONTACT ============ -->
             <section class="contact section" id="contact">
                 <div class="container">
                     <div class="row">
@@ -294,23 +571,61 @@
                             <h2><span>C</span>ontact <span>M</span>e</h2>
                         </div>
                     </div>
-                    <h3 class="contact-title padd-15">Contact Informations</h3>
+                    <h3 class="contact-title padd-15">Reach me directly — pick whichever channel is easiest for you.</h3>
                     <div class="row">
-                        <div class="contact-info-item padd-15">
-                            <div class="icon"><i class="fa fa-phone"></i></div>
-                            <h4>Call Me On</h4>
-                            <p>+91-9321863306</p>
+                        <a class="contact-card padd-15" href="tel:+919321863306">
+                            <div class="contact-card-inner">
+                                <div class="icon"><i class="fa fa-phone"></i></div>
+                                <h4>Call Me</h4>
+                                <p>+91-9321863306</p>
+                                <span class="contact-cta">Tap to call <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                            </div>
+                        </a>
+                        <a class="contact-card padd-15" href="https://wa.me/919321863306?text=Hi%20Naveen!%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch." target="_blank" rel="noopener">
+                            <div class="contact-card-inner">
+                                <div class="icon wa"><i class="fa-brands fa-whatsapp"></i></div>
+                                <h4>WhatsApp</h4>
+                                <p>+91-9321863306</p>
+                                <span class="contact-cta">Chat with me <i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                        <a class="contact-card padd-15" href="mailto:jnaveenraaj2003@gmail.com">
+                            <div class="contact-card-inner">
+                                <div class="icon mail"><i class="fa fa-envelope"></i></div>
+                                <h4>Email Me</h4>
+                                <p>jnaveenraaj2003@gmail.com</p>
+                                <span class="contact-cta">Send an email <i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="row">
+                        <div class="contact-quick padd-15">
+                            <span>Or find me on</span>
+                            <a href="https://www.linkedin.com/in/j-naveen-raaj-01327b1b9/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+                            <a href="https://github.com/JNaveenRaaj" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="https://leetcode.com/u/JNaveenraaj/" target="_blank" rel="noopener"><i class="fa-solid fa-code"></i> LeetCode</a>
+                            <a href="https://www.geeksforgeeks.org/user/jnaveenraaj2003/" target="_blank" rel="noopener"><i class="fa-solid fa-terminal"></i> GfG</a>
+                            <a href="https://www.naukri.com/code360/profile/JNaveenRaaj" target="_blank" rel="noopener"><i class="fa-solid fa-bullseye"></i> Code360</a>
                         </div>
-                        <div class="contact-info-item padd-15">
-                            <div class="icon"><i class="fa fa-envelope"></i></div>
-                            <h4>Email</h4>
-                            <p>jnaveenraaj2003@gmail.com</p>
-                        </div>
-                        </div>
+                    </div>
                 </div>
             </section>
-            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p>© <span id="year">2026</span> J Naveen Raaj. Crafted with <i class="fa-solid fa-heart"></i> and lots of code.</p>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/j-naveen-raaj-01327b1b9/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/JNaveenRaaj" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://leetcode.com/u/JNaveenraaj/" target="_blank"><i class="fa-solid fa-code"></i></a>
+                </div>
+            </footer>
         </div>
+    </div>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop" title="Back to top"><i class="fa fa-arrow-up"></i></button>
+
     <div class="style-switcher">
         <div class="style-switcher-toggler s-icon">
             <i class="fas fa-cog fa-spin"></i>
@@ -327,6 +642,7 @@
             <span class="color5" onclick="setActiveStyle('color5')"></span>
         </div>
     </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script>
     <script src="./js/style-switcher.js"></script>
     <script src="./js/script.js"></script>

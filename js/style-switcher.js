@@ -1,51 +1,61 @@
-
-// toggle theme section
+// ===================== STYLE SWITCHER TOGGLE =====================
 const styleswitchertoggle = document.querySelector(".style-switcher-toggler");
 
 styleswitchertoggle.addEventListener("click", () => {
-
     document.querySelector(".style-switcher").classList.toggle("open");
-})
+});
 
-// when scrolled the theme section will disappear
-
+// Close the switcher panel while scrolling
 window.addEventListener("scroll", () => {
-    if(document.querySelector(".style-switcher").classList.contains("open")){
-        document.querySelector(".style-switcher").classList.remove("open");
-        console.log("workin");
-    }
-    else{
-        document.querySelector(".style-switcher").classList.remove("open");
-    }
-})
+    document.querySelector(".style-switcher").classList.remove("open");
+});
 
-// theme colors
+// ===================== THEME COLORS =====================
 const alternateStyles = document.querySelectorAll(".alternate-style");
-function setActiveStyle(color){
-alternateStyles.forEach((style) => {
-    if(color === style.getAttribute("title")){
-        style.removeAttribute("disabled");
-    }
-    else{
-        style.setAttribute("disabled", "true");
-    }
-})
+const STORAGE_SKIN = "portfolio_skin";
+const STORAGE_THEME = "portfolio_theme";
+
+function setActiveStyle(color) {
+    alternateStyles.forEach((style) => {
+        if (color === style.getAttribute("title")) {
+            style.removeAttribute("disabled");
+        } else {
+            style.setAttribute("disabled", "true");
+        }
+    });
+    localStorage.setItem(STORAGE_SKIN, color);
 }
 
-// dark and night
+// ===================== DARK / LIGHT MODE =====================
 const dayNight = document.querySelector(".day-night");
 
-dayNight.addEventListener("click" , () => {
-    dayNight.querySelector('i').classList.toggle("fa-sun");
-    dayNight.querySelector('i').classList.toggle("fa-moon");
-    document.body.classList.toggle("dark");
-})
+function updateDayNightIcon() {
+    const isDark = document.body.classList.contains("dark");
+    dayNight.querySelector("i").classList.toggle("fa-sun", isDark);
+    dayNight.querySelector("i").classList.toggle("fa-moon", !isDark);
+}
 
+dayNight.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    updateDayNightIcon();
+    localStorage.setItem(STORAGE_THEME, document.body.classList.contains("dark") ? "dark" : "light");
+});
+
+// ===================== RESTORE SAVED PREFERENCES =====================
 window.addEventListener("load", () => {
-    if(document.body.classList.contains("dark")){
-        dayNight.querySelector("i").classList.add("fa-sun");
+    const savedSkin = localStorage.getItem(STORAGE_SKIN);
+    const savedTheme = localStorage.getItem(STORAGE_THEME);
+
+    if (savedSkin) {
+        setActiveStyle(savedSkin);
+    } else {
+        setActiveStyle("color1");
     }
-    else{
-        dayNight.querySelector("i").classList.add("fa-moon");
+
+    if (savedTheme === "light") {
+        document.body.classList.remove("dark");
+    } else {
+        document.body.classList.add("dark");
     }
-})
+    updateDayNightIcon();
+});
