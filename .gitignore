@@ -1,0 +1,19 @@
+# Service account keys and other credentials — never commit these.
+resume-resolver.json
+*-key.json
+*service-account*.json
+sa-private-key.txt
+*-private-key.txt
+secrets.json
+secrets-*.json
+*.pem
+*.key
+.dev.vars
+.env
+.env.*
+!.env.example
+
+node_modules/
+.wrangler/
+.DS_Store
+Thumbs.db

@@ -83,10 +83,11 @@
                                 responses</b> — across enterprise platforms by blending the <b>MERN stack, Next.js,
                                 FastAPI</b> and <b>GenAI</b>.
                             </p>
-                            <div class="hero-buttons">
-                                <a href="./J Naveen Raaj Resume Latest.pdf" class="btn" download>Download CV <i class="fa fa-download"></i></a>
-                                <a href="./J Naveen Raaj Resume Latest.pdf" class="btn btn-outline" target="_blank">View Resume</a>
+                            <div class="hero-buttons" id="resumeButtons" data-resume-state="loading" aria-busy="true">
+                                <a href="#" class="btn" id="resumeDownload" download aria-disabled="true" title="Loading resume...">Download CV <i class="fa fa-download"></i></a>
+                                <a href="#" class="btn btn-outline" id="resumeView" target="_blank" rel="noopener" aria-disabled="true">View Resume</a>
                             </div>
+                            <p class="resume-note" id="resumeNote" role="status" hidden></p>
                             <div class="hero-social">
                                 <a href="https://www.linkedin.com/in/j-naveen-raaj-01327b1b9/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                                 <a href="https://github.com/JNaveenRaaj" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
@@ -194,8 +195,8 @@
                                         <div class="skill-items padd-15">
                                             <h5>Python & AI Integration</h5>
                                             <div class="progress">
-                                                <div class="progress-in" data-progress="90"></div>
-                                                <div class="skill-percent">90%</div>
+                                                <div class="progress-in" data-progress="70"></div>
+                                                <div class="skill-percent">70%</div>
                                             </div>
                                         </div>
                                         <div class="skill-items padd-15">
@@ -645,6 +646,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script>
     <script src="./js/style-switcher.js"></script>
+    <script src="./js/resume.js"></script>
     <script src="./js/script.js"></script>
 </body>
 

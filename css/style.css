@@ -218,6 +218,23 @@ img { max-width: 100%; }
 
 .btn-block { width: 100%; justify-content: center; }
 
+/* ===================== RESUME BUTTON STATES ===================== */
+.hero-buttons[data-resume-state="loading"] .btn,
+.hero-buttons[data-resume-state="error"] .btn {
+    opacity: 0.5;
+    pointer-events: none;
+}
+.hero-buttons[data-resume-state="error"] .btn { opacity: 0.35; }
+
+.resume-note {
+    margin: 14px 0 0;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--text-black-700);
+    max-width: 460px;
+}
+.resume-note a { color: var(--skin-color); font-weight: 600; }
+
 /* ===================== SHADOW / CARDS ===================== */
 .shadow-dark {
     box-shadow: var(--shadow-soft);

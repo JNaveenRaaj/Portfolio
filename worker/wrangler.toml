@@ -1,0 +1,24 @@
+name = "resume-resolver"
+main = "resume.worker.js"
+compatibility_date = "2025-01-01"
+
+[vars]
+# Public values only, and every plain-text variable the Worker needs must be
+# listed here: `wrangler deploy` removes dashboard-set plain variables that are
+# absent from this file. Secrets are not affected.
+FOLDER_ID = "1GeVABCnetfIYMeXd_cx6UI01PxPx3UW9"
+
+# How long the newest-file lookup may be reused, in seconds. Keep it short
+# enough that a resume upload appears promptly. Cached at the edge, so Drive
+# sees one list call per TTL no matter how many visitors there are.
+# CACHE_TTL_SECONDS = "60"
+
+# Secrets (set once with `wrangler secret put`, never written here):
+#   npx wrangler secret put SA_CLIENT_EMAIL
+#   npx wrangler secret put SA_PRIVATE_KEY
+#   npx wrangler secret put DOWNLOAD_NAME   # optional, e.g. "J Naveen Raaj Resume.pdf"
+#
+# SA_CLIENT_EMAIL is the service account's own address
+# (resume-resolver@<project>.iam.gserviceaccount.com), not your Gmail.
+# SA_PRIVATE_KEY is the private_key value from the downloaded JSON key file,
+# including the -----BEGIN PRIVATE KEY----- / -----END PRIVATE KEY----- lines.
